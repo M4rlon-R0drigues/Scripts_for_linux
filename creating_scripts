@@ -69,6 +69,14 @@ snap install wps-office-all-lang-no-internet
 #for installing NetBeans
 apt install netbeans
 
+#for installing Node.js
+wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+source ~/.profile
+nvm ls-remote
+nvm install 10.16.0
+node --versio
+
+
 Now an example generic of script-----------------------------------------------------------------------------------
 
 #!/bin/bash
@@ -115,6 +123,6 @@ sudo chmod + x <name_file> .sh
 
 #and to execute the script still with open terminal type
 
-. \ <name_file> .sh
+. / <name_file> .sh
 
 
