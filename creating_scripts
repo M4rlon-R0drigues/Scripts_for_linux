@@ -38,7 +38,7 @@ apt install codeblocks
 
 #for installing Sublime-Text
 apt install snapd
-snap install sublime-text
+sudo snap install sublime-text --classic --candidate
 
 #for installing snap/snappy
 apt install snapd
