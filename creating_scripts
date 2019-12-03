@@ -76,6 +76,8 @@ nvm ls-remote
 nvm install 10.16.0
 node --versio
 
+#for installing vscode
+sudo snap install --classic code
 
 Now an example generic of script-----------------------------------------------------------------------------------
 
