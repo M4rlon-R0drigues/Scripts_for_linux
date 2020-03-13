@@ -9,3 +9,17 @@ perform these actions automatically.
 
 Uso de shell script.
 Shell script usage.
+---
+Para executar o script:
+abra o terminal no local onde esta o script.sh e execute os comandos
+->sudo chmod +x script.sh
+->informe a senha do root caso necessario
+->após ser feita as verificações selecione o "S" e precione "enter"
+
+
+To run the script:
+open the terminal where script.sh is and run the commands
+-> sudo chmod + x script.sh
+-> enter root password if necessary
+-> after the checks are made select "S" and press "enter"
+
