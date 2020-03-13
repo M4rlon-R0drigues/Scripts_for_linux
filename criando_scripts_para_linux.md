@@ -63,12 +63,11 @@ Assim que é feita a instalação do Linux em uma maquina e queremos instalar so
 
 **Obs.: Há diversas forma de fazer download de softwares como por exemplo baixando arquivos pena internet, porém para instalar via terminal usando script são recomentados usar comandos para instalar os softwares através dos gerenciadosres**
 
+Para que o Script execute e instale os software é necessário que seja fornecido a senha do root assim que for solicitado pelo terminal.
+
 ### Exemplo de script pronto
 
         #!/bin/bash
-
-        sudo su
-        <aqui será necessário fornecer a senha do usuário root>
         sudo apt update
         sudo apt upgrade -y
         sudo apt install -f -y
