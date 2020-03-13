@@ -1,130 +1,82 @@
-Para criação de scripts no Linux é necessario alguns comando, aqui vamos criar scripts simples para distribuição Linux.
-For creating of scripts on Linux is need some of commands, here let's creating simple for distribution Linux.
+# Para criação de scripts no Linux é necessario alguns comando, aqui vamos criar scripts simples para distribuição Linux.
 
-starting-------------------------------------------------------------------------------------------------------------
+### Criando arquivo
 
-Open an editor of text
-Create a file with format .sh
-Example: script.sh
-Open the file on editor
+Primeiro passo é criar um arquivo com a extensão **`.sh`** e logo após abra esse arquivo com a IDE que preferir para começar a fazer seu script.
 
-#!/bin/bash
+### Primeira linha do Script
 
-#acess root to get permissions and execute the commands
-sudo su
+A primeira linha do script tem o sinal `#` que é o sinal de comentário, ou seja, ele não interpreta como código e por uso pode ser usando em linhas para que o essas linhas sejam ignoradas.
 
-#go to initial path
-cd
+        #!/bin/bash
 
-#update the repository
-apt update
+### Sugestão de primeiro comando a serem postos no script
 
-#upgrade the programs and libraries
-apt upgrade
+Assim que é feita a instalação do Linux em uma maquina e queremos instalar softwares, verificar se esta tudo atualizado, verificar se não há coisas desnecessárias podemos adicionar esse conjunto de comandos para fazer essas verificações:
 
-#after all the codes we will use this command
-apt install -f
+        sudo apt update
+        sudo apt upgrade -y
+        sudo apt install -f -y
+        sudo apt autoremove -y
+        sudo apt autoclean
 
-#Command to exit the prompt of command and user root
-exit
+### Lista de Software sugeridos
 
-Now let's instalating programs--------------------------------------------------------------------------------------
+- Instalação de gerenciador de pacotes Snap
 
-#for installing geany
-apt install geany
+        sudo apt install snapd
 
-#for installing codeblocks
-apt install codeblocks
+- Instalação de IDE Geany
 
-#for installing Sublime-Text
-apt install snapd
-sudo snap install sublime-text --classic --candidate
+        sudo apt install geany
 
-#for installing snap/snappy
-apt install snapd
+- Instalação de IDE CodeBlocks
 
-#for installing google chrome
-sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
-wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-apt update
-apt install google-chrome-stable
+        sudo apt install codeblocks
 
-#for installing Opera mini
-apt install snapd
-snap install opera
+- Instalação de IDE Sublime Text
 
-#for installing spotify
-apt install spotify-client
+        wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+        echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+        sudo apt update
+        sudo apt install sublime-text -y
 
-#for installing VLC
-apt install vlc
+- Instalação de navegador Google Chormium
 
-#for installing VirtualBox/Virtual Machine
-apt install virtualbox
+        sudo snap install chromium
 
-#for installing WPS-Office
-apt install snapd
-snap install wps-office-all-lang-no-internet
+- Instalção de reprodutor de midia VLC
 
-#for installing NetBeans
-apt install netbeans
+        sudo apt install vlc
 
-#for installing Node.js
-wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
-source ~/.profile
-nvm ls-remote
-nvm install 10.16.0
-node --versio
+- Instalação de Virtual Box
 
-#for installing vscode
-sudo snap install --classic code
+        sudo apt install virtualbox
 
-Now an example generic of script-----------------------------------------------------------------------------------
+- Instalação de pacote de escritório WPS-Office
 
-#!/bin/bash
+        sudo snap install wps-office-all-lang-no-internet
 
-sudo su
-<enter the root password>
-cd
-apt update
-apt upgrade
-<command for installing the programs>
-apt install -f 
-exit
-exit
+- Instalação de VSCode
 
-Example the installing google chrome, geany and WPS-Office-------------------------------------------------------------
+        sudo snap install --classic code
 
-sudo su
-<enter the root password>
-cd
-apt update
-apt upgrade
+**Obs.: Há diversas forma de fazer download de softwares como por exemplo baixando arquivos pena internet, porém para instalar via terminal usando script são recomentados usar comandos para instalar os softwares através dos gerenciadosres**
 
-sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
-wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-apt update
-apt install google-chrome-stable
+### Exemplo de script pronto
 
-apt install geany
+        #!/bin/bash
 
-apt install snapd
-snap install wps-office-all-lang-no-internet
+        sudo su
+        <aqui será necessário fornecer a senha do usuário root>
+        sudo apt update
+        sudo apt upgrade -y
+        sudo apt install -f -y
+        sudo apt autoremove -y
+        sudo apt autoclean
+        sudo apt install vlc
+        sudo snap install --classic code
+        sudo apt install codeblocks
+        exit
 
-apt install -f 
-exit
-exit
-
-To run script ------------------------------------------------------------------------------------------------
-
-#go to save file location
-#right-click and open the command prompt in the folder where the file is saved
-#immediately after entering the following command.
-
-sudo chmod + x <name_file> .sh
-
-#and to execute the script still with open terminal type
-
-. / <name_file> .sh
-
-
+Salve o sei script com o nome que desejar com a extensão **`.sh`**, dê a ele permissão de execução e logo em seguida o execute com o termonal como [explicando anteriomente](https://github.com/M4rlon-R0drigues/Scripts_for_linux/blob/master/README.md).
