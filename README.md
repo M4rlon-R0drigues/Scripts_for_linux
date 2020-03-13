@@ -6,7 +6,7 @@ Para pessoas que começaram a usar Linux recentemente pode ser uma tarefa muito 
 
 ### Shell Script
 
-Está é a linguagem usada para a criação dos scripts, shell script é muito poderoso e pode ser usado para diversas coisas dentro dos sistema operacional linux usando o terminal
+Está é a linguagem usada para a criação dos scripts, shell script é muito poderoso e pode ser usado para diversas coisas dentro dos sistema operacional linux usando o terminal.
 
 ### Permissões
 
