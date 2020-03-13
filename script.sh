@@ -1,13 +1,10 @@
-#!/bin/bash
-
-sudo su
-#<enter the root password>
-cd
-apt update
-apt upgrade
-#<command for installing the programs>
-apt install -f 
-exit
-
-#script for update of repositories and upgrade of programs
-#script para atualização de repositórios e atualização de programas
+ #!/bin/bash
+    sudo apt update
+    sudo apt upgrade -y
+    sudo apt install -f -y
+    sudo apt autoremove -y
+    sudo apt autoclean
+    sudo apt install vlc
+    sudo snap install --classic code
+    sudo apt install codeblocks
+    exit
